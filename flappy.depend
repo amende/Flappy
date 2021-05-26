@@ -1,6 +1,5 @@
 # depslib dependency file v1.0
-1622062848 source:c:\users\gabriel\travail\formation cyber et 3a\c\tutorpgcpp\flappy\main.cpp
-	<SFML/Graphics.hpp>
+1622064583 source:c:\users\gabriel\travail\formation cyber et 3a\c\tutorpgcpp\flappy\main.cpp
 	"game.h"
 
 1525815618 c:\users\gabriel\travail\formation cyber et 3a\c\sfml-2.5.1-windows-gcc-5.1.0-tdm-32-bit\sfml-2.5.1\include\sfml\graphics.hpp
@@ -412,7 +411,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1622063317 source:c:\users\gabriel\travail\formation cyber et 3a\c\tutorpgcpp\flappy\src\game.cpp
+1622064583 source:c:\users\gabriel\travail\formation cyber et 3a\c\tutorpgcpp\flappy\src\game.cpp
 	"Game.h"
 
 1622062913 c:\users\gabriel\travail\formation cyber et 3a\c\tutorpgcpp\flappy\include\game.h
