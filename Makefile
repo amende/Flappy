@@ -5,14 +5,20 @@ EXEC=executable
 
 all: $(EXEC)
 
-executable: main.o lancer.o
-	$(CC) -o executable main.o lancer.o $(LDFLAGS)
+executable: main.o game.o
+	$(CC) -o executable main.o game.o $(LDFLAGS)
 
-lancer.o: lancer.c lancer.h
-	$(CC) -o lancer.o -c lancer.c $(CFLAGS)
+game.o: game.cpp game.h bird.o
+	$(CC) -o game.o -c game.cpp bird.o $(CFLAGS)
+
+bird.o: bird.cpp bird.h wall.o
+	$(CC) -o bird.o -c bird.cpp wall.o $(CFLAGS)
+
+wall.o: wall.cpp wall.h
+	$(CC) -o wall.o -c wall.cpp $(CFLAGS)
 
 main.o: lancer.h main.c
-	$(CC) -o main.o -c main.c $(CFLAGS)
+	$(CC) -o main.o -c main.cpp $(CFLAGS)
 
 clean:
 	rm -f *.o core
