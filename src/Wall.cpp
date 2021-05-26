@@ -32,6 +32,15 @@ void Wall::initVars(sf::RenderWindow* window){
 
 }
 
+sf::RectangleShape Wall::getTopWall(){
+    return m_topWall;
+}
+
+
+sf::RectangleShape Wall::getBotWall(){
+    return m_botWall;
+}
+
 
 void Wall::update(const float& dt){
     m_topWall.move(-dt*WALL_SPEED,0);

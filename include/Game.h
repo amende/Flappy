@@ -6,8 +6,11 @@
 class Game
 {
     public:
+        // constructors
         Game();
         virtual ~Game();
+
+        //functions
         void render();
         void update();
         void updateEvents();
@@ -20,7 +23,7 @@ class Game
         void endGame();
 
     protected:
-        //init functions
+        //init functions, only used in the constructor
         void initVars();
         void initWindow();
         void initWalls();
@@ -39,10 +42,12 @@ class Game
         std::vector<Wall> m_walls;
         Wall m_wall;
 
+        //spawn of walls
         float m_wallSpawnTimer;
         float m_wallSpawnTimerMax;
         int m_maxWalls;
 
+        //check collisions
         bool m_collide;
 
 

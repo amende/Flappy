@@ -13,7 +13,7 @@ class Bird
         void render(sf::RenderTarget* target);
         void update(const float& dt);
         void impulse();
-
+        sf::CircleShape getShape();
 
     protected:
         //shaphe

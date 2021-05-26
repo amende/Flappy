@@ -17,6 +17,14 @@ Bird::~Bird()
     //dtor
 }
 
+//getters
+
+sf::CircleShape Bird::getShape(){
+    return m_shape;
+}
+
+
+
 
 void Bird::initCircle(sf::RenderWindow* window){
     m_shape=sf::CircleShape(25.f);

@@ -10,6 +10,7 @@ Game::Game()
 void Game::initVars(){
     m_bird=Bird(m_window);
     //m_wall=Wall(m_window);
+    m_collide= false;
     m_maxWalls=10;
     m_wallSpawnTimer=20.f;
     m_wallSpawnTimerMax=100.f;
@@ -117,7 +118,18 @@ void Game::renderWalls(){
     }
 }
 void Game::checkCollision(){
-
+    /*
+    for all walls in the list, check if there is a collision
+    also check if the bird tries to go out of the window
+    */
+    for (auto &e : m_walls){
+        if ((m_bird.getShape().getGlobalBounds().intersects(e.getTopWall().getGlobalBounds()))||(m_bird.getShape().getGlobalBounds().intersects(e.getBotWall().getGlobalBounds()))){
+            m_collide=true;
+        }
+    }
+    if ((m_bird.getShape().getPosition().y<0) || (m_bird.getShape().getPosition().y>m_window->getSize().y)){
+        m_collide=true;
+    }
 }
 
 void Game::run(){
@@ -128,6 +140,11 @@ void Game::run(){
         update();
         render();
     }
+}
+
+void Game::endGame(){
+    m_window->close();
+    std::cout<<"congrats, you died" << std::endl;
 }
 
 

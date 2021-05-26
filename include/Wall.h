@@ -26,6 +26,8 @@ class Wall
         void update(const float& dt);
         void render(sf::RenderTarget* target);
         bool horsCadre();
+        sf::RectangleShape getTopWall();
+        sf::RectangleShape getBotWall();
 
     protected:
         int m_centralPosition;
